@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: sriharimart
+    env: docker
+    plan: free
+    dockerCommand: catalina.sh run
+    envVars:
+      - key: DB_URL
+        value: jdbc:h2:./data/sriharimart;DB_CLOSE_DELAY=-1;MODE=PostgreSQL
+      - key: APP_ENV
+        value: production
